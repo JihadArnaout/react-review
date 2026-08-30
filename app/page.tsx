@@ -1,16 +1,16 @@
 import Description from "@/components/Description";
 import Header from "@/components/Header";
+import Style from "util";
 
 
 export default function Home() {
   return (
-      <main >
+      <main style={{color: "green", backgroundColor: "white"}}>
        
         <p>Hello, Next.js!</p>
-        <Header text="Jihad the Great" text2="The Conqueror" />
+        <Header text="Jihad Arnaout" text2="The Conqueror" />
         <Description />
 
       </main>
   );
 }
- 
