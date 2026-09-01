@@ -18,6 +18,10 @@ export default function Home() {
       <Link href="/about" style={{ textDecoration: "underline" }}>
         Go to about
       </Link>
+
+      <Link href="/home" style={{ textDecoration: "underline" }}>
+        Go to home
+      </Link>
     </>
   );
 }
