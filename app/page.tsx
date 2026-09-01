@@ -14,14 +14,20 @@ export default function Home() {
         <Description />
 
       </main>
-      
-      <Link href="/about" style={{ textDecoration: "underline" }}>
+      <div className={Style.section}>
+
+      <Link href="/about" style={{ textDecoration: "underline", color: "blue" }}>
         Go to about
       </Link>
 
-      <Link href="/home" style={{ textDecoration: "underline" }}>
+      <br />
+
+      <Link href="/home" style={{ textDecoration: "underline", color: "blue" }}>
         Go to home
       </Link>
+      
+      </div>
+
     </>
   );
 }
