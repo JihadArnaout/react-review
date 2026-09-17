@@ -5,7 +5,7 @@ export default function AboutPage() {
     <>
   <div >Jihad arnaout</div>
   <Link href="/" style={{ textDecoration: "underline", color: "blue" }}>
-    Go to main
+    Go to home
   </Link>
   </>
 );
