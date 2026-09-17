@@ -32,7 +32,7 @@ export default function Home() {
       <Link href="/Contact" style={{ textDecoration: "underline", color: "blue" }}>
         Go to contact
       </Link>
-      
+
       </div>
 
     </>
