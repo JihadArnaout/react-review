@@ -1,10 +1,30 @@
+'use client';
+
+import { useEffect, useState } from "react";
+
 export default function Home() {
 
-  let counter = 0;
+  const [counter, setCounter] = useState(0);
+  const [success, setSuccess] = useState(false);
+  
+  const handleClick = () => {
+    setCounter(counter + 1);
+    setSuccess(true);
+    if (counter === 10) {
+      setSuccess(false);
+      setCounter(0);
+    }
+  };
+
+  useEffect(() => {
+    console.log("triggered useEffect");
+  }, [success]);
 
   return (
     <main>
-      <h1 >Home</h1>
+      <h1 className="text-4xl font-bold">Home</h1>
+      <div>counter: {counter}</div>
+      <button onClick={handleClick}> click to increment</button>
     </main>
   );
 }
