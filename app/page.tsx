@@ -1,11 +1,13 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
 
   const [counter, setCounter] = useState(0);
   const [success, setSuccess] = useState(false);
+
+  const inputRef = useRef(null);
   
   const handleClick = () => {
     setCounter(counter + 1);
@@ -24,6 +26,7 @@ export default function Home() {
     <main>
       <h1 className="text-4xl font-bold">Home</h1>
       <div>counter: {counter}</div>
+      <input ref={inputRef} />
       <button onClick={handleClick}> click to increment</button>
     </main>
   );
@@ -72,3 +75,4 @@ export default function Home() {
 //     </>
 //   );
 // }
+
