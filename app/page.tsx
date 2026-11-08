@@ -1,25 +1,65 @@
 'use client';
 
-import { useRef } from "react";
+import { useState, useMemo } from "react";
+
+const calculateIncome = () => {
+  let number = 10;
+  for (let i = 0; i < 10000; i++){
+    number = number + i;
+    }
+    console.log("calculating...");
+    return number;
+}
 
 export default function Home() {
 
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [counter, setCounter] = useState(0);
+  const [shouldCalculate, setshouldCalculate] = useState(false);
+  const income = useMemo(() => calculateIncome(), [shouldCalculate]);
   
   const handleClick = () => {
-    if (inputRef.current) {
-      inputRef.current.focus();
+    setCounter(counter + 1);
+    setshouldCalculate(false)
+    if (counter === 10) {
+      setshouldCalculate(true);
+      setCounter(0);
     }
   }
 
   return (
     <main>
-      <h1 className="text-4xl font-bold">Home</h1>
-      <input ref={inputRef} />
-      <button onClick={handleClick}> click to Focus</button>
+      <div className="text-4xl font-bold"> Home </div>
+      <div>counter: {counter} </div>
+      <div>income: {income} </div>
+      <button onClick={handleClick}>click to Focus </button>
     </main>
   );
 }
+
+
+
+// 'use client';
+
+// import { useRef } from "react";
+
+// export default function Home() {
+
+//   const inputRef = useRef<HTMLInputElement>(null);
+  
+//   const handleClick = () => {
+//     if (inputRef.current) {
+//       inputRef.current.focus();
+//     }
+//   }
+
+//   return (
+//     <main>
+//       <h1 className="text-4xl font-bold">Home</h1>
+//       <input ref={inputRef} />
+//       <button onClick={handleClick}>click to Focus</button>
+//     </main>
+//   );
+// }
 
 
 
