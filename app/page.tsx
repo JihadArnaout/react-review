@@ -1,37 +1,55 @@
 'use client';
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 export default function Home() {
 
-  const [counter, setCounter] = useState(0);
-  const [success, setSuccess] = useState(false);
-
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   
   const handleClick = () => {
-    setCounter(counter + 1);
-    setSuccess(true);
-    if (counter === 10) {
-      setSuccess(false);
-      setCounter(0);
+    if (inputRef.current) {
+      inputRef.current.focus();
     }
-  };
-
-  useEffect(() => {
-    console.log("triggered useEffect");
-  }, [success]);
+  }
 
   return (
     <main>
       <h1 className="text-4xl font-bold">Home</h1>
-      <div>counter: {counter}</div>
       <input ref={inputRef} />
-      <button onClick={handleClick}> click to increment</button>
+      <button onClick={handleClick}> click to Focus</button>
     </main>
   );
 }
 
+
+
+// export default function Home() {
+
+//   const [counter, setCounter] = useState(0);
+//   const [success, setSuccess] = useState(false);
+
+  
+//   const handleClick = () => {
+//     setCounter(counter + 1);
+//     setSuccess(true);
+//     if (counter === 10) {
+//       setSuccess(false);
+//       setCounter(0);
+//     }
+//   };
+
+//   useEffect(() => {
+//     console.log("triggered useEffect");
+//   }, [success]);
+
+//   return (
+//     <main>
+//       <h1 className="text-4xl font-bold">Home</h1>
+//       <div>counter: {counter}</div>
+//       <button onClick={handleClick}> click to increment</button>
+//     </main>
+//   );
+// }
 
 
 
